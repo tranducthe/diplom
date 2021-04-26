@@ -1,0 +1,54 @@
+
+{% extends 'home/base.html' %}
+
+{% block content %}
+<div class="container videos-list">
+
+
+    {% for item in object_list1 %}
+    {% if item.name == 'HANOI UNIVERSITY OF SCIENCE AND TECHNOLOGY' %}
+        <div class="d-flex" style="margin-bottom: 20px">
+            <div class="flex-shrink-0">
+                <a href=""><img src="{{ item.pictrure.url }}" class="mr-3" alt="" width="120px" height="120px"></a>
+            </div>
+            <div class="media-body" style="margin-left: 20px">
+                <h5 class="mt-0"><a href="#">{{ item.name }}</a></h5>
+                <ul>
+                    <a href="="> Andress: {{ item.anddress }} </a>
+                </ul>
+                 <h5 align="justify"> {{ item.excerpt }} </h5>
+                <br>
+                  <h6 align="justify"> {{ item.description }} </h6>
+
+            </div>
+        </div>
+    {% endif %}
+    {% endfor %}
+
+    <br>
+      <h1 class="md-4" align="LEFT"> RECOMMENDATION FOR YOU  </h1> <br> <br>
+
+    {% for item in object_list1 %}
+    {% if item.name != 'HANOI UNIVERSITY OF SCIENCE AND TECHNOLOGY' %}
+        <div class="d-flex" style="margin-bottom: 20px">
+            <div class="flex-shrink-0">
+                <a href=""><img src="{{ item.pictrure.url }}" class="mr-3" alt="" width="120px" height="120px"></a>
+            </div>
+            <div class="media-body" style="margin-left: 20px">
+                <h5 class="mt-0"><a href="#">{{ item.name }}</a></h5>
+                <ul>
+                    <a href="="> Andress: {{ item.anddress }} </a>
+                </ul>
+                <h5 align="justify"> {{ item.excerpt }} </h5>
+                <br>
+            </div>
+        </div>
+    {% endif %}
+    {% endfor %}
+
+
+</div>
+
+{% endblock %}
+
+
